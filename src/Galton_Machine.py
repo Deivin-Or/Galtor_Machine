@@ -1,4 +1,4 @@
-#Nota tqdm solo lo usaré para darle una barra de carga y time para determinar el tiempo que queremos que tarde la carga
+# Nota tqdm solo lo usaré para darle una barra de carga y time para determinar el tiempo que queremos que tarde la carga
 from tqdm import tqdm
 import random
 import numpy as np
@@ -16,7 +16,7 @@ def balls_simulator(balls_number, nivel_number, delay=0.0001):
 
     # Simulamos las bolitas en la barra de carga usando tqdm
     # La funcion de carga puede ser modificada y eliminada si es nceseario 
-    for _ in tqdm(range(balls_number), desc = "Calculadno Resultado, epere un momento por facvor :v......"):
+    for _ in tqdm(range(balls_number), desc = "Calculadno Resultado, epere un momento porfavor :v......"):
         decisions = np.zeros(nivel_number)
 
         # Inicio de proceso de decisiones para saber en cual barra (Celda) caerá la bolita
@@ -44,12 +44,33 @@ def balls_simulator(balls_number, nivel_number, delay=0.0001):
 
 # Defición de función para graficar los resultados
 def galton_grafic(results, number_cells):
-    plt.hist(results, bins=number_cells, edgecolor='black')
-    plt.title('Máquina de Galton \n(Simulación Aproximada de Resultados)')
-    plt.xlabel('Barras')
-    plt.ylabel('Número de Bolitas')
+    # Configuramos el tamaño del gráfico y el fondo oscuro
+    plt.figure(figsize=(10, 6), facecolor='#2E2E2E')  # Fondo de toda la figura
+    
+    # Graficamos con barras en gris oscuro y bordes blancos
+    plt.hist(results, bins=number_cells, edgecolor='white', color='#4F4F4F')
+    
+    # Cambiamos el color de fondo de la gráfica
+    plt.gca().set_facecolor('#1C1C1C')  # Fondo del área de la gráfica
+    
+    # Personalizamos el título y las etiquetas con colores claros
+    plt.title('Máquina de Galton - Resultados', fontsize=16, fontweight='bold', color='white')
+    plt.xlabel('Contenedores', fontsize=12, color='white')
+    plt.ylabel('Número de Bolitas', fontsize=12, color='white')
+    
+    # Cambiamos el color de los ejes y los valores de las etiquetas
+    plt.tick_params(axis='x', colors='white')
+    plt.tick_params(axis='y', colors='white')
+    
+    # Cambiamos el color de las líneas de los ejes para que combinen con el fondo oscuro
+    plt.gca().spines['bottom'].set_color('white')
+    plt.gca().spines['left'].set_color('white')
+    plt.gca().spines['top'].set_color('none')
+    plt.gca().spines['right'].set_color('none')
+    
+    # Mostramos la gráfica con el estilo elegante y moderno
     plt.show()
-
+    
 # Parámetros que se utilizarán para la simulación
 num_canicas = 3000  # Número de canicas
 num_niveles = 12    # Niveles de obstáculos (o decisiones)
