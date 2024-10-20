@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import time
 
 # Función para simular la máquina de Galton usando tanto numpy como random
+
 def balls_simulator(num_canicas, num_niveles, delay=0.0001):
     results = []
     
