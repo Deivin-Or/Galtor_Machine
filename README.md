@@ -18,6 +18,8 @@ Programa inspirado en la máquina de creada por Francis Galthon en 1894, la cual
 
 Asi que en este asao en vez de madera y clavos usaremos código python, para simular la caida de las bolas y su distribucion usaremos celdas y concatenaremos con cada resultado un +1 o un -1 dependiendo si irá a derecha, está se hará con random para lograr que sea de forma aleatoria posible.
 
+OJO: Se trato de no usar demasiadas estructuras de control, por esa razón no se crearón 12 estructuras de control para cada nivel, sino que se creó una sola estructura de control que se repite 12 veces, esto con la finalidad de que sea más fácil de modificar y personalizar el número de niveles.
+
 Tendrá una barra de carga modificable como un extra y una marca personalizada de mi persona.
 
 Se adaptó para que la gráfica se más fácil de personalizar ya que puede modicarse por separado.(Se recomiendo no quitar las gráficas ya que no se agrego una función para quitarlas además de ser necesariar para mostrar los resultados de las ejecuciones).

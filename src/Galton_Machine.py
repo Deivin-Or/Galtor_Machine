@@ -21,7 +21,7 @@ def balls_simulator(balls_number, nivel_number, delay=0.0001):
 
         # Inicio de proceso de decisiones para saber en cual barra (Celda) caerá la bolita
         # Usamos random para decidir si la bolita va a la izquierda (-1) o derecha (+1)
-        for ball in range(num_niveles):
+        for ball in range(nivel_number):
             decisions[ball] = random.choice([-1, 1])
 
         # Sumamos todas las decisiones para determinar la posición final
@@ -70,14 +70,14 @@ def galton_grafic(results, number_cells):
     
     # Mostramos la gráfica con el estilo elegante y moderno
     plt.show()
-    
+
 # Parámetros que se utilizarán para la simulación
-num_canicas = 3000  # Número de canicas
-num_niveles = 12    # Niveles de obstáculos (o decisiones)
-num_contenedores = num_niveles + 1  # El número de contenedores será niveles + 1
+balls_number = 3000  # Número de canicas
+nivel_number = 12    # Niveles de obstáculos (o decisiones)
+cells_number = nivel_number+ 1  # El número de contenedores será niveles + 1
 
 # Simulamos los resultados usando una mezcla de numpy y random
-resultados = balls_simulator(num_canicas, num_niveles)
+final_results = balls_simulator(balls_number, nivel_number)
 
 # Graficamos los resultados
-galton_grafic(resultados, num_contenedores)
+galton_grafic(final_results, cells_number)
